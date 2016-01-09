@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <title>Jon Javascript Challenge</title>
+  <style>
+    #flagtwo{
+      z-index: 50;
+      position: relative;
+      top: 82px;
+      left: 10px;
+    }
+    #flagtwop{
+      z-index: 100;
+      width: 100px;
+      height: 50px;
+      position: relative;
+      top: 50px;
+      left: 0px;
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body ng-app="mainModule">
+  <div ng-controller="instructions">
+    <p><span ng-bind="instructionsOne"></span></p>
+    <p><span ng-bind="instructionsTwo"></span></p>
+    <p><span ng-bind="instructionsThree"></span></p>
+    <hr>
+  </div>
+
+  <div ng-controller="flags">
+    <div id=flagonediv>
+      <input id=flagone type=submit ng-bind="flagone" style="display:none;"></input>
+    </div>
+    <input id=flagtwo type=submit ng-bind="flagtwo" ></input>
+    <div id=flagtwop></div>
+    <div id=flagthree></div>
+    <br><br>
+  </div>
+  <br>
+  <br>
+  <br>
+  <hr>
+  <div ng-controller="answers">
+    <div ng-address-bar browser="html5">
+      <br>
+      <div ng-bind="answer1" ></div>
+      <div ng-bind="answer2" ></div>
+      <div ng-bind="answer3" ></div>
+    </div>
+  </div>
+  
+  <script>
+    $("#flagone, #flagtwo").click(function(){
+        window.location.href = window.location.origin + window.location.pathname + "?token=" + $(this).text(); //remove any ?token already there, add on our new token.
+      });
+  </script>
+  <script>
+    //flagthree
+    function flagthree() {
+      for (var i=0; i<200;i++) {
+        var l = i + l;
+        if (i==-9) {
+            $("#flagthree").append("<span>This may be a good hint to look at, or maybe not.<span>");
+        }
+      }
+      window.location.href = window.location.origin + window.location.pathname + "?token=qyobevgrycsykfdghgzhbghbitzsbeddgrugsyruteha"
+      for (var j=0; j<200;j++) {
+        var l = j + l;
+      }
+    }
+  </script>
+  
+</body>
+</html>
